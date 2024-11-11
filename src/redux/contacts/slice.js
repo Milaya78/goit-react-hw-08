@@ -1,5 +1,5 @@
 import { createSlice, isAnyOf } from "@reduxjs/toolkit";
-import { fetchContacts, addContact, deleteContact } from "./contactsOps";
+import { fetchContacts, addContact, deleteContact } from "./operations";
 
 const contactsSlice = createSlice({
   name: "contacts",
@@ -28,7 +28,7 @@ const contactsSlice = createSlice({
         );
         state.items.splice(index, 1);
       })
-        
+
       .addMatcher(
         isAnyOf(
           fetchContacts.pending,
@@ -53,4 +53,4 @@ const contactsSlice = createSlice({
   },
 });
 
-export default contactsSlice.reducer;
+export const contactsReducer = contactsSlice.reducer;
