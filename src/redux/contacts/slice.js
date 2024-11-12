@@ -30,7 +30,7 @@ const contactsSlice = createSlice({
         state.items.splice(index, 1);
       })
       .addCase(logOut.fulfilled, (state) => {
-        state.items = null;
+        state.items = []; // Очищення контактів
         state.error = null;
         state.loading = false;
       })
