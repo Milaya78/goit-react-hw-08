@@ -31,8 +31,6 @@ const contactsSlice = createSlice({
       })
       .addCase(logOut.fulfilled, (state) => {
         state.items = []; // Очищення контактів
-        state.error = null;
-        state.loading = false;
       })
 
       .addMatcher(
